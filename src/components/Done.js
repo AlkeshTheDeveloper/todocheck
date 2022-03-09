@@ -18,7 +18,7 @@ function Done({ todoItems, updateTodo }) {
       OnDeleteHandler();
       AddToIncomplete();
     };
-  },[]);
+  }, []);
   return (
     <div className="todo">
       <p>Done</p>
