@@ -1,29 +1,36 @@
 import React, { useState } from "react";
-import '../App.css'
+import "../App.css";
+function Todo({ todolist, ondelete, updateTodo }) {
+  const completeTodo = (selected) => {
+    const intodo = todolist
+      .filter((item) => item.id === selected.id)
+      .map((i) => (i.completed = true));
+    updateTodo([...intodo]);
+  };
 
-function Todo({ todolist, ondelete ,updateTodo}) {
-
-
-
-   const completeTodo = (selected) => {
-     const intodo = todolist.filter((item) => item.id === selected.id).map((i)=>i.completed=true);
-     updateTodo([...intodo]);
-   };
-
-  const deleteTodo = (item) => { 
-
+  const deleteTodo = (item) => {
     ondelete(item);
-        console.log(todolist);
-  }
+    console.log(todolist);
+  };
 
-
-
-
-  return <div>
-    <ol>
-      {todolist.filter((i) =>i.completed === false).map((item) => <li key={item.id}>{ item.title} <span className="btn-todo"><button onClick={()=>completeTodo(item)}>done</button><button onClick={()=>deleteTodo(item)}>delete</button></span></li>) }
-  </ol>
-  </div>;
+  return (
+    <div className="list-1">
+      <h1>Todo</h1>
+      <ol>
+        {todolist
+          .filter((i) => i.completed === false)
+          .map((item) => (
+            <li key={item.id}>
+              {item.title}{" "}
+              <span className="btn-todo">
+                <button onClick={() => completeTodo(item)}>done</button>
+                <button onClick={() => deleteTodo(item)}>delete</button>
+              </span>
+            </li>
+          ))}
+      </ol>
+    </div>
+  );
 }
 
 export default Todo;

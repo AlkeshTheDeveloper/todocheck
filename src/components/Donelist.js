@@ -1,4 +1,5 @@
 import React from "react";
+import '../App.css'
 
 function Donelist({ todolist, ondelete,updateTodo }) {
     const deleteTodo = (item) => {
@@ -11,13 +12,15 @@ function Donelist({ todolist, ondelete,updateTodo }) {
  }
 
   return (
-    <div>
+    <div className="list-2">
+      <h1>DONE</h1>
       <ol>
         {todolist
-          .filter((i) => i.completed ===true)
+          .filter((i) => i.completed === true)
           .map((item) => (
             <li key={item.id}>
-              {item.title} <button onClick={()=>incompleteTodo(item)}>Todo</button>
+              {item.title}{" "}
+              <button onClick={() => incompleteTodo(item)}>Todo</button>
               <button onClick={() => deleteTodo(item)}>delete</button>
             </li>
           ))}

@@ -40,12 +40,15 @@ function App() {
 
   return (
     <>
-      <Todo todolist={todolist} ondelete={ondelete} updateTodo={updateTodo} />
+      <div className="todocontainer">
+        <Todo todolist={todolist} ondelete={ondelete} updateTodo={updateTodo} className="list-1" />
       <Donelist
         todolist={todolist}
         ondelete={ondelete}
-        updateTodo={updateTodo}
-      />
+          updateTodo={updateTodo}
+       
+        />
+        </div>
     </>
   );
 }

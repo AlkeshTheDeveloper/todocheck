@@ -8,10 +8,22 @@
 .btn-todo{
   display: inline-block;
   
-  margin: 0px 30px;
-  padding: 12px;
+  margin: 0px 10px;
+  padding: 5px;
 }
 
 .btn-todo>button{
   margin:0px 8px;
+}
+
+.todocontainer{
+  display: flex;
+  justify-content:space-evenly; 
+
+}
+
+.list-1,.list-2{
+  width:40%;
+  border:1px solid blue;
+
 }
