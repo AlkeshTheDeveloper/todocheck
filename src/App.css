@@ -1,10 +1,12 @@
 .App {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: row;
   margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+<<<<<<< HEAD
 .btn-todo{
   display: inline-block;
   
@@ -16,14 +18,50 @@
   margin:0px 8px;
 }
 
+.todolist {
+
+  width: 40vw;
+  padding: 10px;
+  height: 34em;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+
+ul {
+  list-style-type: none;
+}
+
 .todocontainer{
   display: flex;
   justify-content:space-evenly; 
 
 }
 
+<<<<<<< HEAD
 .list-1,.list-2{
   width:40%;
   border:1px solid blue;
 
+=======
+p {
+  border:1px solid lightpink;
+  background-color:lightskyblue;
+  font-size: 2em;
+  text-align: center;
+  padding: 10px;
+}
+
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6em;
+  border: 1px dotted green;
+  color: white;
+  background-color: lightslategray;
+  margin: 5px 10px;
+  width: 35vw;
+>>>>>>> 467058249ae9e3b12ec5742d0a0f8b0a1591de26
 }
