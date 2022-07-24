@@ -5,54 +5,13 @@
   margin: auto;
 }
 
-
-.todolist {
-
-  width: 40vw;
-  padding: 10px;
-  height: 550px;
-  overflow-x: hidden;
-  overflow-y: auto;
+.btn-todo{
+  display: inline-block;
+  
+  margin: 0px 30px;
+  padding: 12px;
 }
 
-
-a {
-  text-decoration: none;
-}
-
-
-ul {
-  list-style-type: none;
-}
-
-.todo {
-  border: 1px solid black;
-  border-radius: 10px;
-
-}
-
-.todolist {
-
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-}
-
-p {
-
-  font-size: 2em;
-  text-align: center;
-}
-
-
-li {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.6em;
-  border: 1px dotted green;
-  color: white;
-  background-color: lightslategray;
-  margin: 5px 10px;
-  width: 35vw;
+.btn-todo>button{
+  margin:0px 8px;
 }

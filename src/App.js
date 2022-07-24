@@ -1,30 +1,52 @@
-import "./App.css";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import Todo from "./components/Todo.js";
-import Done from "./components/Done";
+import React from "react";
+import { useEffect, useState } from "react";
+import Donelist from "./components/Donelist";
+import Todo from "./components/Todo";
 
 function App() {
-  const [todoItems, setTodoItems] = useState([]);
-  
+  const [todolist, settodolist] = useState([]);
+
+  const ondelete = (item) => {
+    const selectedlist = todolist.filter((i) => i.id !== item.id)
+    settodolist([...selectedlist]);
+  };
+
   const updateTodo = (res) => {
-    setTodoItems([...todoItems,res]);
+
+    settodolist([...todolist]);
+
   };
 
   useEffect(() => {
-    axios
-      .get(`https://jsonplaceholder.typicode.com/users/1/todos`)
-      .then((response) => {
-        const res = response.data;
-        setTodoItems(res);
-      });
-  }, []);
+    async function getData() {
+      const data = await fetch(
+        "https://jsonplaceholder.typicode.com/users/1/todos"
+      );
+      const res = await data.json();
+      console.log(res);
+      settodolist(res);
+    }
+
+    getData();
+  
+    
+    return () => {
+     
+    }
+  }
+    , []);
+
+
 
   return (
-    <div className="App">
-      <Todo todoItems={todoItems} updateTodo={updateTodo} />
-      <Done todoItems={todoItems} updateTodo={updateTodo} />
-    </div>
+    <>
+      <Todo todolist={todolist} ondelete={ondelete} updateTodo={updateTodo} />
+      <Donelist
+        todolist={todolist}
+        ondelete={ondelete}
+        updateTodo={updateTodo}
+      />
+    </>
   );
 }
 
